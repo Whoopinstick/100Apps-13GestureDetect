@@ -10,20 +10,57 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var gestureText = ""
+    @State private var backgroundColor = Color.clear
     
     var body: some View {
         GeometryReader { geo in
             NavigationView {
                 ZStack {
-                    Color.clear
+                    self.backgroundColor
                         .contentShape(Rectangle())
                         .frame(width: geo.size.width, height: geo.size.height)
-                        .onTapGesture {
+                        .onTapGesture(count: 2) {
                             withAnimation {
-                                self.gestureText = "Tapped"
+                                self.gestureText = "Double Tapped"
                             }
-                            print("tapped")
                     }
+                    .onTapGesture {
+                        withAnimation {
+                            self.gestureText = "Tapped"
+                        }
+                    }
+                    .onLongPressGesture {
+                        withAnimation {
+                            self.gestureText = "Long Pressed"
+                        }
+                    }
+                    .gesture(DragGesture(minimumDistance: 5, coordinateSpace: .local)
+                        .onEnded(
+                            { value in
+                                if value.translation.width < 0 {
+                                    // left
+                                    self.gestureText = "swipe left"
+                                }
+                                
+                                if value.translation.width > 0 {
+                                    // right
+                                    self.gestureText = "swipe right"
+                                }
+                                if value.translation.height < 0 {
+                                    // up
+                                    self.gestureText = "swipe up"
+                                }
+                                
+                                if value.translation.height > 0 {
+                                    // down
+                                    self.gestureText = "swipe down"
+                                }
+                            }
+                        )
+                    )
+                    
+                    
+                    
                     
                     Text("\(self.gestureText)")
                     
