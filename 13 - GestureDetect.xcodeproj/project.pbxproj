@@ -56,12 +56,10 @@
 		0A4EE10924F6E1470050784E /* 13 - GestureDetect */ = {
 			isa = PBXGroup;
 			children = (
-				0A4EE10A24F6E1470050784E /* AppDelegate.swift */,
-				0A4EE10C24F6E1470050784E /* SceneDelegate.swift */,
-				0A4EE10E24F6E1470050784E /* ContentView.swift */,
 				0A4EE11024F6E1480050784E /* Assets.xcassets */,
-				0A4EE11524F6E1480050784E /* LaunchScreen.storyboard */,
 				0A4EE11824F6E1480050784E /* Info.plist */,
+				0A4EE11E24F6E15B0050784E /* Delegate */,
+				0A4EE11F24F6E1620050784E /* View */,
 				0A4EE11224F6E1480050784E /* Preview Content */,
 			);
 			path = "13 - GestureDetect";
@@ -73,6 +71,24 @@
 				0A4EE11324F6E1480050784E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0A4EE11E24F6E15B0050784E /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0A4EE10A24F6E1470050784E /* AppDelegate.swift */,
+				0A4EE10C24F6E1470050784E /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		0A4EE11F24F6E1620050784E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A4EE11524F6E1480050784E /* LaunchScreen.storyboard */,
+				0A4EE10E24F6E1470050784E /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
